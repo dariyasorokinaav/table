@@ -1,0 +1,1307 @@
+/* ====== Gotham Pro ====== */
+
+/* Regular */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+/* Italic */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+}
+
+/* Light */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+}
+
+/* Light Italic */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_lightitalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap
+}
+
+/* Medium */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_mediumitalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap
+}
+
+/* Bold */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_bolditalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap
+}
+
+/* Black */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap
+}
+
+/* Black Italic */
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/gothampro_blackitalic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --bg-light: #f6f6f6;
+    --bg-grey: #e0e0e0;
+    --border-grey: #b0b0b0;
+    --red: #d71b3a;
+    --red-dark: #cf2a46;
+    --red-table-head: #c62828;
+    --red-sub: #d32f2f;
+    --text-dark: #4b4c4f;
+    --text-grey: #666;
+    --text-light: #999
+}
+
+* {
+    color: var(--text-dark);
+    font-family: "Gotham Pro", sans-serif;
+    font-weight: normal
+}
+
+body {
+    background-image: url("img/bp.jpg");
+    width: 81%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden !important;
+    padding-top: 80px; /* = реальной высоте шапки */
+}
+
+/* Фиксированная шапка БЕЗ изменения её стилей */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 81% !important;
+}
+
+header .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px 0 10px 10px;
+    border-radius: 0 0 15px 15px
+}
+
+.header_logo {
+    flex: 0 0 auto
+}
+
+#logoWhite {
+    display: none
+}
+
+.header_tel {
+    flex: 0 0 auto;
+    text-align: right
+}
+
+.telefon {
+    text-decoration: none !important;
+    color: var(--text-dark) !important;
+    font-size: 0.95em;
+}
+
+
+/* Hero/красные блоки */
+.oformit {
+    background-color: var(--red);
+    border-radius: 20px 20px 0 0
+}
+
+.gl1 {
+    align-items: center;
+    margin-top: .5em;
+    margin-left: auto;
+    margin-right: auto;
+    background: #D71B3A;
+    border-radius: 15px 15px 0 0;
+    padding-top: 15em
+}
+
+.gl1 h1, .gl1 p {
+    color: #fff !important
+}
+
+.gl1 h1 {
+    text-align: center;
+    font-size: 62px;
+    padding-bottom: 1em
+}
+
+#fill_blank_btn {
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 30%;
+    margin: 30px auto 25px;
+    display: block;
+    text-align: center
+}
+
+.gl2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 40px 0;
+    background: var(--red);
+    text-align: center;
+    margin-left: 0 !important;
+    margin-right: 0 !important
+}
+
+.uploadBlankPhoto, .downloadBlank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 260px;
+    text-decoration: none;
+    color: #fff
+}
+
+.uploadBlankPhoto .top, .downloadBlank .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px
+}
+
+.uploadBlankPhoto span, .downloadBlank span {
+    color: #fff !important
+}
+
+.uploadBlankPhoto p, .downloadBlank p {
+    font-size: 14px;
+    opacity: .8;
+    margin: 0;
+    line-height: 1.4;
+    color: #fff !important
+}
+
+
+@media (min-width: 992px) {
+    .gl2 {
+        flex-wrap: nowrap;
+        gap: 24px;
+        padding: 32px 0
+    }
+
+    .gl2 > .col-12, .gl2 > .col-md-6 {
+        flex: 0 0 auto;
+        width: auto;
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .uploadBlankPhoto, .downloadBlank {
+        width: 260px;
+        min-height: 120px
+    }
+
+    .uploadBlankPhoto p, .downloadBlank p {
+        font-size: 13px;
+        line-height: 1.35;
+        color: rgba(255, 255, 255, .85);
+        max-width: 220px
+    }
+}
+
+/* ===== Upload (общие стили) */
+.upload-container {
+    display: none
+}
+
+.collapse-panel {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, opacity .4s ease
+}
+
+.collapse-panel.enter {
+    max-height: 2000px;
+    opacity: 1
+}
+
+#uploadContainer {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .4s ease, transform .4s ease, visibility 0s linear .4s
+}
+
+#uploadContainer.is-open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity .4s ease, transform .4s ease, visibility 0s
+}
+
+#uploadContainer.is-open .row {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center
+}
+
+#uploadSection {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 !important
+}
+
+#uploadContainer > .row {
+    width: 100%;
+    margin: 0
+}
+
+#uploadContainerRow {
+    display: none
+}
+
+#uploadContainerRow.is-open {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px
+}
+
+#uploadSectionRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto
+}
+
+#uploaderRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center
+}
+
+#submitBtnRow {
+    display: block;
+    margin: 32px auto 0
+}
+
+.uploader .slot {
+    width: 240px;
+    height: 160px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none
+}
+
+.slot-svg {
+    width: 120px;
+    height: 140px
+}
+
+.upload-slot input {
+    display: none
+}
+
+.preview-slot {
+    width: 140px;
+    height: 160px;
+    position: relative;
+    border: 2px dashed #9AA0A6;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff
+}
+
+.preview-slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.remove-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    background: transparent;
+    padding: 0
+}
+
+.remove-btn svg {
+    width: 22px;
+    height: 22px
+}
+
+.remove-btn line {
+    stroke: #6b7280;
+    stroke-width: 2;
+    stroke-linecap: round
+}
+
+.btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 0;
+    padding: .9rem 1.6rem;
+    background: #d71b3a;
+    color: #fff;
+    font-size: clamp(14px, 2.2vw, 18px)
+}
+
+.btn-pill:disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer
+}
+
+.close-btn::before {
+    content: "✕";
+    color: #666
+}
+
+.formwrap {
+    font-family: "Gotham Pro", sans-serif !important;
+    background: #fff;
+    padding: 50px 0;
+    border-radius: 0;
+    position: relative;
+    top: 0;
+    z-index: auto
+}
+
+.enterBlankTitle {
+    margin-left: 1.13em
+}
+
+.section-title {
+    margin-bottom: 1.1em
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 24px
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px
+}
+
+.form-grid input {
+    height: 46px;
+    border: 1px solid #a6a6a6;
+    border-radius: 999px;
+    padding: 0 16px;
+    outline: none
+}
+
+/* Rules / Photos */
+.rules, .photos {
+    font-size: 14px;
+    line-height: 1.45;
+    background: #fff;
+    border-radius: 0;
+    margin-top: 2em !important
+}
+
+.rules ul {
+    padding-left: 18px;
+    list-style: none
+}
+
+.rules li {
+    position: relative;
+    margin-bottom: 6px
+}
+
+.rules li::before {
+    content: "– ";
+    position: relative
+}
+
+.photos {
+    margin-top: 24px
+}
+
+.photos h5 {
+    margin: 0 0 8px
+}
+
+.photos__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none
+}
+
+.photos__link span {
+    color: var(--red);
+    font-weight: 700
+}
+
+.photos__hint {
+    color: #999;
+    margin: 6px 0 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto
+    }
+}
+
+/* ====== Таблица ====== */
+.table-wrapper {
+    width: 100%;
+    overflow-x: hidden
+}
+
+.table-wrapper table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed
+}
+
+table:has(> thead > tr.header-row) {
+    font-size: clamp(13px, 1.6vw, 16px);
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+}
+
+table:has(> thead > tr.header-row) thead .header-row {
+    background-color: var(--red-table-head);
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600
+}
+
+table:has(> thead > tr.header-row) thead .header-row th {
+    padding: 12px 8px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    color: #fff !important
+}
+
+table:has(> thead > tr.header-row) thead .sub-header-row {
+    background-color: var(--red-table-head) !important;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center
+}
+
+table:has(> thead > tr.header-row) thead .sub-header-row th {
+    padding: 6px 8px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    color: #fff !important
+}
+
+table:has(> thead > tr.header-row) th,
+table:has(> thead > tr.header-row) td {
+    padding: clamp(6px, 1.2vw, 12px) 6px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal
+}
+
+table:has(> thead > tr.header-row) td {
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff
+}
+
+table:has(> thead > tr.header-row) tbody tr:nth-child(even) {
+    background: #f9f9f9
+}
+
+/* Ширины колонок (база — десктоп) */
+table:has(> thead > tr.header-row) .col-no {
+    width: 5%;
+    text-align: center
+}
+
+table:has(> thead > tr.header-row) .col-art {
+    width: 15%
+}
+
+table:has(> thead > tr.header-row) .col-name {
+    width: 30%
+}
+
+table:has(> thead > tr.header-row) .col-doc {
+    width: 10%
+}
+
+table:has(> thead > tr.header-row) .col-fact {
+    width: 10%
+}
+
+table:has(> thead > tr.header-row) .col-note {
+    width: 30%;
+    padding: 0 !important
+}
+
+table:has(> thead > tr.header-row) .comment {
+    border: 1px solid transparent;
+    width: 95%;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #666;
+    background: #fff;
+    padding: 5px 8px;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color .15s ease, box-shadow .15s ease
+}
+
+table:has(> thead > tr.header-row) tbody tr {
+    height: 80px
+}
+
+table:has(> thead > tr.header-row) tbody td {
+    height: 80px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    vertical-align: top;
+    overflow: hidden
+}
+
+table:has(> thead > tr.header-row) input {
+    height: 100% !important;
+    width: 95%;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    box-sizing: border-box
+}
+
+table:has(> thead > tr.header-row) .col-doc input,
+table:has(> thead > tr.header-row) .col-fact input {
+    width: 90%; /* занимает почти всю ширину ячейки */
+    height: 36px; /* одинаковая высота с другими input */
+    border-radius: 6px; /* чуть скруглим */
+    text-align: center; /* цифры по центру */
+    box-sizing: border-box;
+}
+
+table:has(> thead > tr.header-row) textarea {
+    height: 85px !important;
+    min-height: 28px !important;
+    resize: none;
+    width: 95%;
+    font-size: .8em;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    box-sizing: border-box
+}
+
+table:has(> thead > tr.header-row) input:hover,
+table:has(> thead > tr.header-row) input:focus,
+table:has(> thead > tr.header-row) textarea:hover,
+table:has(> thead > tr.header-row) textarea:focus {
+    border-color: #c62828;
+    box-shadow: 0 0 0 2px rgba(198, 40, 40, .15)
+}
+
+
+.m-menu {
+    --bw: 2px;
+    --line: #9A9A9A;
+    width: 220px;
+    max-width: 90vw;
+    background: #fff;
+    border: var(--bw) solid var(--line);
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #333
+}
+
+.m-line {
+    display: grid;
+    grid-template-columns:1fr auto;
+    align-items: center;
+    padding: .4em .5em;
+    border-bottom: var(--bw) solid var(--line)
+}
+
+.m-line:last-child {
+    border-bottom: 0
+}
+
+.m-label {
+    font-weight: 600
+}
+
+.m-qty {
+    display: grid;
+    grid-template-columns:4.5em auto;
+    gap: .3em
+}
+
+.m-qty input {
+    height: 1.6em;
+    border: 1px solid var(--line) !important;
+    border-radius: 0;
+    font: inherit;
+    padding: 0 .3em;
+    min-width: 3em
+}
+
+.m-unit {
+    padding: .15em .35em;
+    font-weight: 600;
+    background: #fff;
+    white-space: nowrap
+}
+
+.m-check {
+    display: grid;
+    grid-template-columns:1fr auto;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    text-align: left;
+
+}
+
+.m-checkbox {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #9A9A9A !important;
+    background: #fff;
+    border-radius: 0;
+    cursor: pointer
+}
+
+.m-checkbox:focus-visible {
+    outline: 2px solid #d32f2f;
+    outline-offset: 2px
+}
+
+.m-checkbox:checked {
+    border-color: var(--line);
+    background: var(--red-dark)
+}
+
+.m-done {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: var(--red-dark);
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    padding: .4em;
+    cursor: pointer
+}
+
+.m-done:hover {
+    background: var(--red-dark)
+}
+
+.select-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e0e0e0;
+    color: #333;
+    border: 1px solid var(--line);
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    transition: background-color .2s ease;
+    position: relative;
+    z-index: 3;
+    pointer-events: auto
+}
+
+.select-btn:hover {
+    background: #d0d0d0
+}
+
+.select-btn::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 2px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid var(--red); /* красный треугольник вправо */
+}
+
+
+/* Кнопка "Добавить строку" (визуал) */
+#addRow {
+    display: block;
+    align-items: flex-start;
+    background: #d71b3a;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color .2s ease, transform .15s ease
+}
+
+#addRow:hover {
+    background: #cf2a46
+}
+
+#addRow:active {
+    transform: scale(.98)
+}
+
+#addRow span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    margin-left: 12px
+}
+
+/* Вписывание таблицы и кнопки по ширине контейнера */
+.table-wrapper table {
+    width: 100%
+}
+
+#addRow {
+    width: 100%
+}
+
+/* По умолчанию — полностью скрыт */
+#uploadContainer {
+    display: none;
+    width: 100%;
+    height: 0; /* не занимает места */
+    min-height: 0; /* обнуляем */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity .4s ease, transform .4s ease, visibility 0s linear .4s;
+}
+
+/* Когда открыт */
+#uploadContainer.is-open {
+    display: flex;
+    width: 100%;
+    min-height: 100vh; /* только в этот момент занимает экран */
+    height: auto; /* растягивается по содержимому */
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease, visibility 0s;
+}
+
+
+/* Планшеты: немного сжать колонки */
+@media (max-width: 992px) {
+    table:has(> thead > tr.header-row) {
+        font-size: clamp(12px, 2vw, 14px)
+    }
+
+    table:has(> thead > tr.header-row) th,
+    table:has(> thead > tr.header-row) td {
+        padding: clamp(6px, 1.6vw, 10px) 6px
+    }
+
+    table:has(> thead > tr.header-row) .col-no {
+        width: 6%
+    }
+
+    table:has(> thead > tr.header-row) .col-art {
+        width: 16%
+    }
+
+    table:has(> thead > tr.header-row) .col-name {
+        width: 30%
+    }
+
+    table:has(> thead > tr.header-row) .col-doc {
+        width: 12%
+    }
+
+    table:has(> thead > tr.header-row) .col-fact {
+        width: 12%
+    }
+
+    table:has(> thead > tr.header-row) .col-note {
+        width: 24%
+    }
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+    .enterBlankTitle {
+        font-size: 1.45em;
+    }
+
+    #downloadBlank {
+        display: none !important;
+    }
+
+    table:has(> thead > tr.header-row) {
+        font-size: clamp(11px, 3.4vw, 13px)
+    }
+
+    table:has(> thead > tr.header-row) .header-row th,
+    table:has(> thead > tr.header-row) .sub-header-row th {
+        font-size: clamp(11px, 3.4vw, 13px)
+    }
+
+    table:has(> thead > tr.header-row) th,
+    table:has(> thead > tr.header-row) td {
+        padding: clamp(4px, 1.8vw, 8px) 4px
+    }
+
+    table:has(> thead > tr.header-row) .col-no {
+        width: 8%
+    }
+
+    table:has(> thead > tr.header-row) .col-art {
+        width: 18%
+    }
+
+    table:has(> thead > tr.header-row) .col-name {
+        width: 26%
+    }
+
+    table:has(> thead > tr.header-row) .col-doc {
+        width: 12%
+    }
+
+    table:has(> thead > tr.header-row) .col-fact {
+        width: 12%
+    }
+
+    table:has(> thead > tr.header-row) .col-note {
+        width: 24%
+    }
+
+    table:has(> thead > tr.header-row) input,
+    table:has(> thead > tr.header-row) textarea {
+        font-size: clamp(11px, 3.4vw, 13px)
+    }
+
+    table:has(> thead > tr.header-row) textarea {
+        min-height: 60px !important
+    }
+
+    .m-menu {
+        width: min(220px, 90vw);
+        font-size: clamp(11px, 3.4vw, 13px)
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+    table:has(> thead > tr.header-row) {
+        font-size: 11px
+    }
+
+    table:has(> thead > tr.header-row) .col-no {
+        width: 9%
+    }
+
+    table:has(> thead > tr.header-row) .col-art {
+        width: 18%
+    }
+
+    table:has(> thead > tr.header-row) .col-name {
+        width: 25%
+    }
+
+    table:has(> thead > tr.header-row) .col-doc {
+        width: 12%
+    }
+
+    table:has(> thead > tr.header-row) .col-fact {
+        width: 12%
+    }
+
+    table:has(> thead > tr.header-row) .col-note {
+        width: 24%
+    }
+}
+
+/* Десктопы: таблица и кнопка — 70% и прижаты влево */
+@media (min-width: 992px) {
+    .table-wrapper table {
+        width: 70%;
+        max-width: 70%;
+        margin-left: 0;
+        margin-right: auto
+    }
+
+    #addRow {
+        width: 70%;
+        margin-left: 0;
+        margin-right: auto
+    }
+}
+
+/* Мобилки — общая адаптация страницы */
+@media (max-width: 768px) {
+    body {
+        width: 100% !important;
+        background-color: #fff;
+        background-image: none
+    }
+
+    header {
+        width: 100% !important
+    }
+
+    header .container, header {
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .oformit .row {
+        border-radius: 0 !important
+    }
+
+    header .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--red) !important;
+        padding: 1em 0 .3em 13vw;
+        border-radius: 0
+    }
+
+    .header_logo img {
+        width: 200px
+    }
+
+    #logo {
+        display: none
+    }
+
+    #logoWhite {
+        display: flex;
+        padding-bottom: 10px;
+    }
+
+    .telefon {
+        color: var(--white) !important;
+        font-size: .75em;
+        margin-right: 6vw !important
+    }
+
+    .container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .oformit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        border-radius: 0;
+        padding-top: 0 !important
+    }
+
+    @supports (min-height:100dvh) {
+        .oformit {
+            min-height: 100dvh
+        }
+    }
+    .oformit .row {
+        --bs-gutter-x: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important
+    }
+
+    .gl1 {
+        padding-top: 3em
+    }
+
+    .gl1 h1 {
+        font-size: 3em
+    }
+
+    .oformit .gl2 {
+        margin-left: 0 !important;
+        margin-right: 0 !important
+    }
+
+    .oformit {
+        padding: 2rem 5vw
+    }
+
+    .gl2 {
+        margin-bottom: 0 !important
+    }
+
+    .noWrap {
+        display: none
+    }
+
+    #fill_blank_btn {
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(16px, 2.4vw, 28px);
+        padding: clamp(.75rem, 1.6vw, 1.1rem) clamp(1.2rem, 4vw, 2rem);
+        width: min(36rem, 80vw);
+        margin: 4.5rem auto 2.5rem;
+        box-sizing: border-box;
+        text-align: center;
+        white-space: normal
+    }
+
+    @supports (min-height:100dvh) {
+        #uploadContainer {
+            min-height: 100dvh
+        }
+    }
+    #addRow {
+        width: 100%
+    }
+
+    .select__menu {
+        left: -150px !important;
+    }
+}
+
+/* чтобы меню не обрезалось ячейкой */
+.table-wrapper table td.col-note {
+    overflow: visible; /* было hidden */
+    position: relative; /* якорь для absolute-позиционирования меню */
+}
+
+/* Выпадающее меню — поверх кнопки, но чуть левее и ниже */
+.select__menu {
+    display: none;
+    position: absolute;
+    top: 20%; /* от нижнего края кнопки */
+    left: 30px; /* старт вровень с кнопкой */
+    transform: translate(-10px, 5px); /* смещаем левее (-10px) и ниже (+5px) */
+    z-index: 999999 !important; /* поверх таблицы и кнопки */
+}
+
+.select__menu.open {
+    display: block;
+}
+
+/* Чтобы не обрезалось */
+.table-wrapper,
+.table-wrapper table,
+.table-wrapper td.col-note {
+    overflow: visible !important;
+}
+
+/* кнопка удаления под цифрой */
+.row-del {
+    display: block;             /* на своей строке */
+    text-align: center;         /* центрируем */
+    border: none;
+    background: transparent;
+    color: #d71b3a;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 4px;            /* отступ от цифры */
+    line-height: 1;
+    padding: 0;
+}
+
+.row-del::before {
+    content: "✕";               /* крестик */
+    font-size: 14px;
+    line-height: 1;
+}
+
+.row-del:hover {
+    color: #cf2a46;             /* темнее при наведении */
+    transform: scale(1.1);
+}
+
+/* Красная обводка для input и textarea при фокусе/hover */
+table:has(> thead > tr.header-row) input:hover,
+table:has(> thead > tr.header-row) input:focus,
+table:has(> thead > tr.header-row) textarea:hover,
+table:has(> thead > tr.header-row) textarea:focus {
+    outline: none !important; /* убираем синюю рамку */
+    border-color: var(--red-table-head) !important;
+    box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.25) !important;
+}
+
+/* === АДАПТАЦИЯ НА МОБИЛЬНЫХ === */
+@media (max-width: 768px) {
+    .select-btn {
+        display: block !important; /* вместо inline-flex */
+        width: 100% !important; /* на всю ширину */
+        font-size: 13px !important; /* компактный текст */
+        padding: 8px 12px !important; /* меньше паддинги */
+        text-align: left !important;
+    }
+
+    body {
+        padding: 0 !important;
+    }
+
+    .header_logo img {
+        width: 140px !important; /* меньше */
+        margin-left: 2vw; /* левее */
+    }
+
+    .gl1 h1 {
+        margin-top: 3.2em;
+    }
+
+    .telefon {
+        font-size: 0.75em;
+        padding-right: 2vw !important; /* чтобы не перекрывался */
+    }
+
+    /* таблица — меньше шрифт */
+    table:has(> thead > tr.header-row) {
+        font-size: 10px !important;
+    }
+
+    table:has(> thead > tr.header-row) th,
+    table:has(> thead > tr.header-row) td {
+        font-size: 10px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 768px) {
+    .select-btn::after {
+        margin-right: 12px; /* красивый отступ на мобилках */
+    }
+}
+.col-name input {
+    white-space: normal;
+    word-wrap: break-word;
+}

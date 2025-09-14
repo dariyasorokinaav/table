@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Оформление претензии</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 header_logo">
+                <a href="/" title="Поволжский поставщик инструментов">
+                    <img src="img/logo.svg" id="logo" alt="логотип Инструмент-РТ">
+                </a>
+                <img src="img/logo-white.svg" id="logoWhite" alt="логотип Инструмент-РТ">
+            </div>
+            <div class="col-6 header_tel">
+                <a class="telefon" href="tel:88005051252" id="Zvonok">8(800) 505-12-52</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Первый красный блок -->
+<div class="container oformit">
+    <div class="row gl1" id="gl1">
+        <div class="col-12">
+            <h1>Оформление претензии</h1>
+            <a class="btn btn_sm" href="#form" id="fill_blank_btn">Заполнить бланк <br class="noWrap"> рекламации онлайн</a>
+        </div>
+    </div>
+    <div class="row gl2">
+        <!-- Левая карточка -->
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <a href="#" class="uploadBlankPhoto" id="uploadTrigger">
+                <div class="top">
+                    <img src="img/camera.svg" alt="Загрузить бланк" width="25">
+                    <span>Загрузить фото бланка</span>
+                </div>
+                <p>Загрузите фотографию заполненной<br>бумажной версии бланка</p>
+            </a>
+        </div>
+
+        <!-- Правая карточка -->
+        <div class="col-12 col-md-6 d-flex justify-content-center" id="downloadBlank">
+            <a href="blank.xlsx" class="downloadBlank" download>
+                <div class="top">
+                    <img src="img/download.svg" alt="Скачать бланк" width="25">
+                    <span>Скачать бланк</span>
+                </div>
+                <p>Скачайте бланк для<br>заполнения вручную</p>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Блок загрузки (изначально скрыт) -->
+
+<div id="uploadContainer" class="container upload-container">
+    <div class="row justify-content-center w-100">
+        <div class="col-12 col-md-8 text-center">
+            <div id="uploadSection" class="collapse-panel" aria-hidden="true">
+                <form action="send_photo.php" method="post" enctype="multipart/form-data">
+                    <button type="button" class="btn-close close-btn" aria-label="Закрыть" id="closeUpload"></button>
+                    <div id="uploader" class="uploader d-flex flex-wrap gap-1 justify-content-center">
+                        <!-- стартовый слот -->
+                        <label class="slot upload-slot" data-role="picker">
+                            <!-- ✅ только name, без multiple -->
+                            <input type="file" accept="image/*" name="blank_photos[]">
+                            <svg viewBox="0 0 120 140" class="slot-svg" aria-hidden="true">
+                                <rect x="2" y="2" width="116" height="136" rx="6"
+                                      fill="none" stroke="#9AA0A6" stroke-width="2" stroke-dasharray="6 6"/>
+                                <g stroke="#9AA0A6" fill="none" stroke-width="2" stroke-linecap="round"
+                                   stroke-linejoin="round">
+                                    <rect x="35" y="28" width="50" height="36" rx="6"/>
+                                    <circle cx="45" cy="38" r="4"/>
+                                    <polyline points="40,58 52,46 63,54 73,46 85,58"/>
+                                    <circle cx="60" cy="98" r="12"/>
+                                    <line x1="60" y1="92" x2="60" y2="104"/>
+                                    <line x1="54" y1="98" x2="66" y2="98"/>
+                                </g>
+                            </svg>
+                        </label>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button id="submitBtn" class="btn-pill" type="submit">Завершить и отправить</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--    <form action="send_photo.php" method="post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="blank_photos[]" multiple>-->
+<!--        <button type="submit">Отправить</button>-->
+<!--    </form>-->
+<div class="container" style="background-color: white !important;">
+    <section id="form" class="formwrap">
+        <div class="container mt-5">
+            <h3 class="section-title mt-4 ml-3 enterBlankTitle">Заполнить бланк рекламации онлайн</h3>
+
+            <form action="send_action.php" method="post" enctype="multipart/form-data" id="claim-form"
+                  style="padding-left:1em; padding-right: 1em;">
+                <div class="row g-lg-4">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="form-grid">
+                            <label>Наименование покупателя*<input required type="text" name="customer_name"></label>
+                            <label>Контактное лицо, телефон*<input required type="text" name="customer_contact"></label>
+                            <label>Ваш менеджер*<input required type="text" name="manager"></label>
+                            <label>Адрес доставки*<input required type="text" name="delivery_address"></label>
+                            <label>Поставщик*<input required type="text" name="supplier"></label>
+                            <label>Дата доставки, количество мест*<input required type="text"
+                                                                         name="delivery_date"></label>
+                            <label>Номер/дата счета/накладной*<input required type="text" name="invoice"></label>
+                        </div>
+                    </div>
+
+                    <section class="col-lg-5 col-md-12">
+                        <div class="rules">
+                            <p>Документы обязательные при сдаче электроинструмента в сервисный центр:</p>
+                            <ul>
+                                <li>Правильно оформленный бланк рекламации с обязательными полями для заполнения</li>
+                                <li>Комплектация должна быть полной. Комплектация указывается в паспорте изделия</li>
+                                <li>Гарантийный талон должен быть правильно заполнен, обязательны к заполнению:
+                                    <ul>
+                                        <li>наименование и модель инструмента, дата выпуска и серийный номер
+                                            инструмента, дата продажи, печать и наименование продавца.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Отсутствие вышеописанных условий является поводом для отказа в гарантийном ремонте.</p>
+                            <p>В случае, если электроинструмент не попадает под гарантийный ремонт, диагностику
+                                оплачивает клиент в размере 400 рублей.</p>
+                            <p>Если есть следы вскрытия, инструмент признается не гарантийным, диагностику оплачивает
+                                клиент в размере 400 рублей.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <h3 class="section-title mt-4" id="pretenzii">Претензии к поставке</h3>
+
+                <!-- Таблица -->
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr class="header-row">
+                            <th class="col-no" rowspan="2">№</th>
+                            <th class="col-art" rowspan="2">Артикул</th>
+                            <th class="col-name" rowspan="2">Наименование</th>
+                            <th colspan="2" class="col-qty">Количество</th>
+                            <th class="col-note" rowspan="2">Уточнения</th>
+                        </tr>
+                        <tr class="sub-header-row" style="background-color: #d32f2f;">
+                            <th class="col-doc">Док.</th>
+                            <th class="col-fact">Факт.</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="background-color: white;">
+                            <td class="col-no">1</td>
+                            <td class="col-art">
+                                <textarea name="article[]" rows="5" style="width:100%; resize:vertical;"> </textarea>
+                            </td>
+                            <td class="col-name">
+                                <textarea name="title[]" rows="5" style="width:100%; resize:vertical;"></textarea>
+                            </td>
+                            <td class="col-doc"><input type="number" min="0" max="5000" name="doc[]"></td>
+                            <td class="col-fact"><input type="number" min="0" max="5000" name="fact[]"></td>
+                            <td class="col-note">
+                                <div class="select">
+                                    <button type="button" class="select-btn" style="padding:10px;">Выбрать</button>
+                                    <div class="select__menu">
+                                        <div class="m-menu">
+                                            <div class="m-line">
+                                                <span class="m-label">Недостача</span>
+                                                <div class="m-qty">
+                                                    <input type="number" min="0" name="shortage[]">
+                                                    <span class="m-unit">шт.</span>
+                                                </div>
+                                            </div>
+                                            <div class="m-line">
+                                                <span class="m-label">Излишек</span>
+                                                <div class="m-qty">
+                                                    <input type="number" min="0" name="surplus[]">
+                                                    <span class="m-unit">шт.</span>
+                                                </div>
+                                            </div>
+                                            <div class="m-line">
+                                                <span class="m-label">Брак</span>
+                                                <div class="m-qty">
+                                                    <input type="number" min="0" name="defect[]">
+                                                    <span class="m-unit">шт.</span>
+                                                </div>
+                                            </div>
+
+                                            <label class="m-line m-check"><span
+                                                    class="m-label">Отказ от товара</span><input class="m-checkbox"
+                                                                                                 type="checkbox"
+                                                                                                 name="declined[0]"></label>
+                                            <label class="m-line m-check"><span class="m-label">Предпродажа</span><input
+                                                    class="m-checkbox" type="checkbox" name="presale[0]"></label>
+                                            <label class="m-line m-check"><span class="m-label">Обмен</span><input
+                                                    class="m-checkbox" type="checkbox" name="exchange[0]"></label>
+                                            <label class="m-line m-check"><span
+                                                    class="m-label">Гарант.ремонт</span><input class="m-checkbox"
+                                                                                               type="checkbox"
+                                                                                               name="warranty[0]"></label>
+                                            <label class="m-line m-check"><span
+                                                    class="m-label">Платный ремонт</span><input class="m-checkbox"
+                                                                                                type="checkbox"
+                                                                                                name="paid_repair[0]"></label>
+
+                                            <button type="button" class="m-done">Готово</button>
+                                        </div>
+                                    </div>
+                                    <textarea name="comment[]" class="comment" cols="30" rows="10"></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button type="button" class="btn-add" id="addRow">Добавить строку <span>+</span></button>
+
+                <!-- Доп. фото -->
+                <section class="photos">
+                    <h5>Добавьте фотографии при необходимости</h5>
+                    <a href="#submitBtnRow" id="open-add-photo" class="photos__link">
+                        <img src="img/add.svg" alt="">
+                        <span>Добавить фотографию</span>
+                    </a>
+                    <p class="photos__hint">При необходимости можно добавить фотографии гарантийного талона, чеков,
+                        дефекта товара или иные другие документы.</p>
+
+                    <div class="previews" id="add-previews"></div>
+                    <input hidden id="add-input" type="file" accept="image/*" multiple name="additional_photos[]">
+                </section>
+                <div id="uploadContainerRow" class="upload-container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8 text-center">
+                            <div id="uploadSectionRow" class="collapse-panel mt-4" aria-hidden="true">
+                                <div id="uploaderRow"
+                                     class="uploader d-flex flex-wrap gap-3 justify-content-center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="submitBtnRow" class="btn-pill d-block mx-auto mt-4">Завершить и отправить</button>
+
+                <!-- Блок загрузки для addRow (изначально скрыт) -->
+
+            </form>
+        </div>
+    </section>
+</div>
+
+<script>
+    (function () {
+        'use strict';
+
+        // ===== Утилиты =====
+        const $ = (s, r = document) => r.querySelector(s);
+        const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+        function getHeaderOffset() {
+            const header = $('header');
+            const isFixed = header && getComputedStyle(header).position === 'fixed';
+            return isFixed ? header.offsetHeight : 0;
+        }
+
+        function smoothScrollToEl(el, extraOffset = 8) {
+            if (!el) return;
+            const offset = getHeaderOffset();
+            const top = window.pageYOffset + el.getBoundingClientRect().top - offset - extraOffset;
+            window.scrollTo({top, behavior: 'smooth'});
+        }
+
+        // ===== Загрузчик изображений (исправленный) =====
+        // fieldName — имя поля в $_FILES ('blank_photos[]' или 'additional_photos[]')
+        function initUploader(uploaderId, submitBtnId, fieldName) {
+            const uploader = document.getElementById(uploaderId);
+            const submitBtn = submitBtnId ? document.getElementById(submitBtnId) : null;
+            if (!uploader || uploader.dataset.inited === '1') return;
+
+            function enableSubmitIfNeeded() {
+                const hasPreview = uploader.querySelectorAll('.preview-slot').length > 0;
+                if (submitBtn) submitBtn.disabled = !hasPreview;
+            }
+
+            // создаёт кнопку выбора файла с пустым <input type="file">
+            function makeUploadSlot(name) {
+                const label = document.createElement('label');
+                label.className = 'slot upload-slot';
+                label.setAttribute('data-role', 'picker');
+
+                label.innerHTML = `
+    <svg viewBox="0 0 120 140" class="slot-svg" aria-hidden="true">
+      <rect x="2" y="2" width="116" height="136" rx="6"
+            fill="none" stroke="#9AA0A6" stroke-width="2" stroke-dasharray="6 6"/>
+      <g stroke="#9AA0A6" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="35" y="28" width="50" height="36" rx="6"/>
+        <circle cx="45" cy="38" r="4"/>
+        <polyline points="40,58 52,46 63,54 73,46 85,58"/>
+        <circle cx="60" cy="98" r="12"/>
+        <line x1="60" y1="92" x2="60" y2="104"/>
+        <line x1="54" y1="98" x2="66" y2="98"/>
+      </g>
+    </svg>
+  `;
+
+                // общий обработчик выбора файла
+                function handleChange(e) {
+                    const fileInput = e.target;
+                    if (!fileInput.files || !fileInput.files[0]) return;
+
+                    const url = URL.createObjectURL(fileInput.files[0]);
+                    const preview = document.createElement('div');
+                    preview.className = 'preview-slot';
+                    preview.innerHTML = `
+      <img src="${url}" alt="Предпросмотр">
+      <button type="button" class="remove-btn" aria-label="Удалить">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+        </svg>
+      </button>
+    `;
+
+                    // переносим ВЫБРАННЫЙ input внутрь превью (чтобы он ушёл на сервер)
+                    fileInput.style.display = 'none';
+                    preview.appendChild(fileInput);
+
+                    // вставляем превью перед кнопкой выбора
+                    uploader.insertBefore(preview, label);
+
+                    // создаём НОВЫЙ пустой input для следующего файла
+                    const newInput = document.createElement('input');
+                    newInput.type = 'file';
+                    newInput.accept = 'image/*';
+                    newInput.name = name || 'blank_photos[]';
+                    newInput.style.position = 'absolute';
+                    newInput.style.opacity = '0';
+                    newInput.style.width = '1px';
+                    newInput.style.height = '1px';
+                    newInput.addEventListener('change', handleChange);   // <-- важная строка
+                    label.appendChild(newInput);
+
+                    // удаление превью
+                    preview.querySelector('.remove-btn').addEventListener('click', () => {
+                        URL.revokeObjectURL(url);
+                        preview.remove();
+                        enableSubmitIfNeeded();
+                    });
+
+                    enableSubmitIfNeeded();
+                }
+
+                // первый (стартовый) input
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.name = name || 'blank_photos[]';
+                input.style.position = 'absolute';
+                input.style.opacity = '0';
+                input.style.width = '1px';
+                input.style.height = '1px';
+                input.addEventListener('change', handleChange);        // <-- важная строка
+                label.appendChild(input);
+
+                return label;
+            }
+
+
+            // Инициализация контейнера
+            uploader.innerHTML = '';
+            uploader.appendChild(makeUploadSlot(fieldName || 'blank_photos[]'));
+            enableSubmitIfNeeded();
+            uploader.dataset.inited = '1';
+        }
+
+        // ===== Панели с анимацией =====
+        function openPanel(containerId, panelId, uploaderId, submitBtnId, scrollToId, fieldName) {
+            const container = document.getElementById(containerId);
+            const panel = document.getElementById(panelId);
+            if (!container || !panel) return;
+
+            container.style.display = 'block';
+            container.classList.add('is-open');
+
+            panel.classList.remove('enter');
+            requestAnimationFrame(() => panel.classList.add('enter'));
+            panel.setAttribute('aria-hidden', 'false');
+
+            initUploader(uploaderId, submitBtnId || null, fieldName || null);
+
+            if (scrollToId) {
+                setTimeout(() => {
+                    const scrollTarget = document.getElementById(scrollToId);
+                    if (scrollTarget) smoothScrollToEl(scrollTarget, 12);
+                }, 300);
+            } else {
+                smoothScrollToEl(container, 12);
+            }
+        }
+
+        function closePanel(containerId, panelId, scrollTargetSel = 'oformit') {
+            const container = document.getElementById(containerId);
+            const panel = document.getElementById(panelId);
+            if (!container || !panel) return;
+
+            panel.classList.remove('enter');
+            panel.setAttribute('aria-hidden', 'true');
+
+            const onEnd = () => {
+                container.classList.remove('is-open');
+                panel.removeEventListener('transitionend', onEnd);
+                const target = $(scrollTargetSel);
+                if (target) smoothScrollToEl(target, 0);
+            };
+            panel.addEventListener('transitionend', onEnd, {once: true});
+        }
+
+        // ===== Таблица: строки =====
+        function initTableRows() {
+            const tableBody = document.querySelector('table tbody');
+            const addRowBtn = document.getElementById('addRow');
+            if (!tableBody || !addRowBtn) return;
+
+            const templateRow = tableBody.querySelector('tr');
+            if (!templateRow) return;
+
+            function prepareClonedRow(row, withDeleteBtn) {
+                $$('[id]', row).forEach(el => el.removeAttribute('id'));
+                $$('input, textarea', row).forEach(el => {
+                    if (el.type === 'checkbox' || el.type === 'radio') el.checked = false;
+                    else el.value = '';
+                });
+                $$('.select__menu', row).forEach(m => m.classList.remove('open'));
+
+                const firstCell = row.querySelector('td.col-no') || row.cells[0];
+                if (!firstCell) return;
+
+                const existed = firstCell.querySelector('.row-del');
+                if (existed) existed.remove();
+
+                if (withDeleteBtn) {
+                    const del = document.createElement('button');
+                    del.type = 'button';
+                    del.className = 'row-del';
+                    del.title = 'Удалить строку';
+                    del.setAttribute('aria-label', 'Удалить строку');
+                    firstCell.appendChild(del);
+                }
+            }
+
+            function renumberAndReindex() {
+                [...tableBody.rows].forEach((tr, index) => {
+                    const noCell = tr.querySelector('td.col-no') || tr.cells[0];
+                    if (noCell) {
+                        noCell.childNodes.forEach(n => {
+                            if (n.nodeType === 3) n.remove();
+                        });
+                        const delBtn = noCell.querySelector('.row-del');
+                        noCell.insertAdjacentText('afterbegin', String(index + 1) + (delBtn ? '' : ''));
+                        if (index === 0) {
+                            if (delBtn) delBtn.remove();
+                        } else if (!delBtn) {
+                            const del = document.createElement('button');
+                            del.type = 'button';
+                            del.className = 'row-del';
+                            del.title = 'Удалить строку';
+                            del.setAttribute('aria-label', 'Удалить строку');
+                            noCell.appendChild(del);
+                        }
+                    }
+
+                    $$('input[name], textarea[name], select[name]', tr).forEach(el => {
+                        const n = el.getAttribute('name');
+                        if (!n) return;
+                        if (/\[\s*\]$/.test(n)) return; // name[] не трогаем
+                        const newName = n.replace(/\[(\d+)\](?!.*\[\d+\])/g, `[${index}]`);
+                        if (newName !== n) el.setAttribute('name', newName);
+                    });
+                });
+            }
+
+            tableBody.addEventListener('click', (e) => {
+                const btn = e.target.closest('.row-del');
+                if (!btn) return;
+                const row = btn.closest('tr');
+                const index = [...tableBody.rows].indexOf(row);
+                if (index <= 0) return;
+                row.remove();
+                renumberAndReindex();
+            });
+
+            addRowBtn.addEventListener('click', () => {
+                const newRow = templateRow.cloneNode(true);
+                prepareClonedRow(newRow, true);
+                tableBody.appendChild(newRow);
+                renumberAndReindex();
+            });
+
+            prepareClonedRow(templateRow, false);
+            renumberAndReindex();
+        }
+
+        // ===== Привязки UI =====
+        document.addEventListener('DOMContentLoaded', () => {
+            // Плавный скролл к форме
+            const toFormBtn = $('#fill_blank_btn');
+            const formTarget = $('#form');
+            if (toFormBtn && formTarget) {
+                toFormBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    smoothScrollToEl(formTarget, 8);
+                    setTimeout(() => {
+                        const firstInput = $('#claim-form input, #claim-form textarea, #claim-form select');
+                        if (firstInput) firstInput.focus({preventScroll: true});
+                    }, 500);
+                });
+            }
+
+            // Первый блок (фото бланка) — уходит в send_photo.php как blank_photos[]
+            const openMain = $('#uploadTrigger');
+            const closeMain = $('#closeUpload');
+            if (openMain) {
+                openMain.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openPanel('uploadContainer', 'uploadSection', 'uploader', 'submitBtn', null, 'blank_photos[]');
+                });
+            }
+            if (closeMain) {
+                closeMain.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closePanel('uploadContainer', 'uploadSection');
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            }
+
+            // Второй блок (доп. фото в основной форме) — если используешь
+            const addPhotoTrigger = $('#open-add-photo');
+            if (addPhotoTrigger) {
+                addPhotoTrigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openPanel('uploadContainerRow', 'uploadSectionRow', 'uploaderRow', null, 'submitBtnRow', 'additional_photos[]');
+                });
+            }
+
+            // Таблица
+            initTableRows();
+        });
+
+    })();
+
+    // ===== Выпадающее меню в таблице (как было) =====
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.select-btn');
+        if (btn) {
+            const select = btn.closest('.select');
+            const menu = select.querySelector('.select__menu');
+            document.querySelectorAll('.select__menu.open').forEach(m => {
+                if (m !== menu) m.classList.remove('open');
+            });
+            menu.classList.toggle('open');
+            return;
+        }
+
+        const done = e.target.closest('.m-done');
+        if (done) {
+            done.closest('.select__menu')?.classList.remove('open');
+            return;
+        }
+
+        if (!e.target.closest('.select')) {
+            document.querySelectorAll('.select__menu.open').forEach(m => m.classList.remove('open'));
+        }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

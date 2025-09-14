@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Оформление претензии</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Bootstrap только как сетка/утилиты -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+            width: 81%; /* одинаково */
+            margin-left: auto; /* центрируем */
+            margin-right: auto; /* центрируем */
+            max-width: none; /* убираем ограничение Bootstrap */
+            padding-left: 0; /* убираем боковые паддинги */
+            padding-right: 0;
+        }
+
+        .oformit {
+            min-height: calc(100vh - 80px); /* вся высота экрана минус шапка */
+            display: flex;
+            justify-content: center; /* центр по горизонтали */
+            align-items: center; /* центр по вертикали */
+            background-color: white;
+            padding: 0;
+        }
+
+        .gl1 {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px; /* расстояние между галочкой и текстом */
+            margin: 0;
+            height: auto;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #D2373E;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-circle img {
+            width: 60%;
+            height: auto;
+        }
+
+        .message {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/styles/main.css">
+</head>
+<body>
+<!-- ======= Шапка (логотип + телефон) ======= -->
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 header_logo">
+                <a href="/" title="Поволжский поставщик инструментов">
+                    <img src="img/logo.svg" id="logo" alt="логотип Инструмент-РТ">
+
+                    <img src="img/logo-white.svg" id="logoWhite" alt="логотип Инструмент-РТ"> </a>
+            </div>
+            <div class="col-6 header_tel">
+                <a class="telefon" href="tel:88005051252" id="Zvonok">8(800) 505-12-52</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container oformit">
+    <div class="row gl1" id="gl1">
+        <div class="icon-circle">
+            <img src="img/check.svg" alt="check" style="width: 70%;">
+        </div>
+        <div class="message text-center">
+            Бланк рекламации<br/>отправлен!
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
